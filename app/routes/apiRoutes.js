@@ -1,6 +1,6 @@
 var surveyData = require("../data/friends");
-var express = require("express");
-var app = express();
+// var express = require("express");
+// var app = express();
 
 module.exports = function (app) {
 
@@ -10,17 +10,13 @@ module.exports = function (app) {
     });
 
     app.post("/api/friends", function (req, res) {
-        if (surveyData.length < 5) {
+        if (surveyData.length == res) {
             surveyData.push(req.body);
             res.json(true);
         }
         else {
-            res.jason(false);
+            ("Sorry no Matches")
+            res.json(false);
         }
-    });
-
-    app.post("/api/clear", function (req, res) {
-        surveyData.length = 0;
-        res.json({ ok: true });
     });
 }
