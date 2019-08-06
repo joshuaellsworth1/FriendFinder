@@ -1,4 +1,4 @@
-var surveyData = require("../data/friends");
+var friends = require("../data/friends");
 // var express = require("express");
 // var app = express();
 
@@ -6,17 +6,16 @@ module.exports = function (app) {
 
     //This will display a JSON of possible friends - GET
     app.get("/api/friends", function (req, res) {
-        res.json(surveyData);
+        res.json(friends);
     });
 
     app.post("/api/friends", function (req, res) {
-        if (surveyData.length == res) {
-            surveyData.push(req.body);
-            res.json(true);
-        }
-        else {
-            ("Sorry no Matches")
-            res.json(false);
-        }
-    });
-}
+        var answer = req.body;
+
+        var response = answer.score;
+
+        var Name = '';
+        var image = '';
+        var totalDifference = 100
+
+        
