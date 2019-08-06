@@ -20,7 +20,11 @@ module.exports = function (app) {
         //   }
 
         for (var i = 0; i < friends.length; i++) {
+            console.log(friends[i]);
+
             for (var j = 0; j < response.length; j++) {
+                if (friends.length[0] == user.res)
+                    console.log("congrats you match!");
             }
         }
         friends.push(user);
