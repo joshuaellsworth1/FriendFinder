@@ -1,7 +1,7 @@
 var friendsArray = [
     {
         name: "Dan",
-        photo: "https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
+        photo: "https://cimg.tvgcdn.net/i/2017/04/02/234bdf6a-e87a-41a8-94bf-07842011771d/6fc025cc00bfde6457f73440be21108a/chandler-friends-hp-lg.jpg",
         scores: [
             5,
             4,
@@ -17,7 +17,7 @@ var friendsArray = [
     },
     {
         name: "Sam",
-        photo: "https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
+        photo: "https://vignette.wikia.nocookie.net/friends/images/0/0b/RossGeller.jpg/revision/latest?cb=20180424154547",
         scores: [
             1,
             1,
@@ -33,7 +33,7 @@ var friendsArray = [
     },
     {
         name: "Sarah",
-        photo: "https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
+        photo: "https://66.media.tumblr.com/c67800cd5d1af3bcdeaac4647ca478a5/tumblr_orreag04Q01ubcxtyo2_250.png",
         scores: [
             3,
             1,
@@ -49,7 +49,7 @@ var friendsArray = [
     },
     {
         name: "George",
-        photo: "https://media.licdn.com/mpr/mpr/shrinknp_400_400/p/6/005/064/1bd/3435aa3.jpg",
+        photo: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/George_Clooney_2016.jpg/220px-George_Clooney_2016.jpg",
         scores: [
             2,
             1,

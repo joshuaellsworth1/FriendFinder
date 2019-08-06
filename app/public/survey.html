@@ -187,7 +187,8 @@
 
                     <!-- <button type="submit" class="btn btn-primary submit">Submit</button> -->
 
-                    <button id="submit" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                    <button id="submit" type="button" class="btn btn-primary" data-toggle="modal"
+                        data-target="#exampleModal">
                         Submit
                     </button>
 
@@ -251,7 +252,11 @@
                         if (data) {
                             console.log("Answers submitted!")
                             $(".modal-title").text(data.name);
-                            $(".modal-body").text(data.photo);
+
+                            var img = $('<img class=img-fluid>')
+                            img.attr('src', data.photo)
+                            img.appendTo('.modal-body');
+
                         }
                     }
                 )
