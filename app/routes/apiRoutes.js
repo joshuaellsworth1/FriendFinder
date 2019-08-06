@@ -21,7 +21,7 @@ module.exports = function (app) {
         for (var i = 0; i < friends.length; i++) {
             var diff = 0;
             for (var j = 0; j < response.length; j++) {
-                diff += Math.abs(friends[i].score[j] - answer[j]);
+                diff += Math.abs(friends[i].score[j] - res[j]);
             }
         }
         if (diff < totalDifference) {
