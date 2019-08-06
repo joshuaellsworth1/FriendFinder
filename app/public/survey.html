@@ -187,7 +187,7 @@
 
                     <!-- <button type="submit" class="btn btn-primary submit">Submit</button> -->
 
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                    <button id="submit" type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
                         Submit
                     </button>
 
@@ -225,13 +225,13 @@
 
     <script type="text/javascript">
         $(document).ready(function () {
-            $(".button").on("click", function (event) {
+            $("#submit").on("click", function (event) {
                 event.preventDefault();
 
                 var survey = {
                     name: $('#userName').val().trim(),
                     image: $('#userPhoto').val().trim(),
-                    score: [
+                    scores: [
                         $("#q1").val().trim(),
                         $("#q2").val().trim(),
                         $("#q3").val().trim(),
@@ -246,15 +246,16 @@
                 };
                 console.log(survey);
 
+                $.post("/api/friends", survey,
+                    function (data) {
+                        if (data) {
+                            console.log("Answers submitted!")
+                            $(".modal-title").text(data.name);
+                            $(".modal-body").text(data.photo);
+                        }
+                    }
+                )
             });
-
-            // // $.post("/api/friends", survey,
-            // //     function (data) {
-            // //         if (data) {
-            // //             console.log("Answers submitted!")
-            // //         }
-            // //     }
-            // )
         });
 
     </script>
