@@ -224,40 +224,42 @@
     </div>
 
     <script type="text/javascript">
-        $("#submit").on("click", function (event) {
-            even.preventDefault();
+        $(document).ready(function () {
+            $("#submit").on("click", function (event) {
+                event.preventDefault();
 
-            $.get(this, function () {
-                $().appendTo('body').modal();
-            });
+                $.get(this, function () {
+                    $().appendTo('body').modal();
 
-            var survey = {
-                name: $('#userName').val().trim(),
-                image: $('#userPhoto').val().trim(),
-                score: [
-                    q1: $("#q1").val().trim(),
-                    q2: $("#q2").val().trim(),
-                    q3: $("#q3").val().trim(),
-                    q4: $("#q4").val().trim(),
-                    q5: $("#q5").val().trim(),
-                    q6: $("#q6").val().trim(),
-                    q7: $("#q7").val().trim(),
-                    q8: $("#q8").val().trim(),
-                    q9: $("#q9").val().trim(),
-                    q10: $("#q10").val().trim()
-                ]
-            };
+                    var survey = {
+                        name: $('#userName').val().trim(),
+                        image: $('#userPhoto').val().trim(),
+                        score: [
+                            q1: $("#q1").val().trim(),
+                            q2: $("#q2").val().trim(),
+                            q3: $("#q3").val().trim(),
+                            q4: $("#q4").val().trim(),
+                            q5: $("#q5").val().trim(),
+                            q6: $("#q6").val().trim(),
+                            q7: $("#q7").val().trim(),
+                            q8: $("#q8").val().trim(),
+                            q9: $("#q9").val().trim(),
+                            q10: $("#q10").val().trim()
+                        ]
+                    };
+                    console.log(survey);
 
-            console.log(survey);
+                });
 
-            $.post("/api/friends", survey,
-                function (data) {
-                    if (data) {
-                        alert("survey complete");
+                $.post("/api/friends", survey,
+                    function (data) {
+                        if (data) {
+                            alert("survey complete");
+                        }
                     }
-                }
-            )
-        });
+                )
+            });
+        }
     </script>
 
 </body>

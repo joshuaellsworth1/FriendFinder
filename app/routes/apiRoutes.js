@@ -12,24 +12,16 @@ module.exports = function (app) {
     app.post("/api/friends", function (req, res) {
         var user = req.body;
         var response = user.score;
-        var totalDifference = 0;
         var name = "";
         var image = "";
 
-        for (var i = 0; i < friends.length; i++) {
-            var diff = 0;
-            for (var j = 0; j < response.length; j++) {
-                diff += Math.abs(friends[i].score[j] - res[j]);
-            }
-        }
-        if (diff < totalDifference) {
-            console.log('Friend found = ' + diff)
-            console.log('Name of Friend =' + friends[i].name);
-            console.log('Friends image = ' + friends[i].image);
+        // function difference(a, b) {
+        //     return Math.abs(a - b);
+        //   }
 
-            totalDifference = diff;
-            name = friends[i].name;
-            image = friends[i].photo;
+        for (var i = 0; i < friends.length; i++) {
+            for (var j = 0; j < response.length; j++) {
+            }
         }
         friends.push(user);
         res.json({ name: name, image: image });
