@@ -10,13 +10,11 @@ module.exports = function (app) {
     });
 
     app.post("/api/friends", function (req, res) {
-        var answer = req.body;
-
-        var response = answer.score;
-
-        var name = '';
-        var image = '';
-        var totalDifference = 100
+        var user = req.body;
+        var response = user.score;
+        var totalDifference = 0;
+        var name = "";
+        var image = "";
 
         for (var i = 0; i < friends.length; i++) {
             var diff = 0;
@@ -25,7 +23,7 @@ module.exports = function (app) {
             }
         }
         if (diff < totalDifference) {
-            console.log('friend found = ' + diff)
+            console.log('Friend found = ' + diff)
             console.log('Name of Friend =' + friends[i].name);
             console.log('Friends image = ' + friends[i].image);
 
@@ -33,7 +31,7 @@ module.exports = function (app) {
             name = friends[i].name;
             image = friends[i].photo;
         }
+        friends.push(user);
+        res.json({ name: name, image: image });
     });
-    friends.push(answer);
-    res.json({ name: name, image: image });
 }
